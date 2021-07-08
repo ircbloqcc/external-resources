@@ -38,6 +38,28 @@ function addBlocks (Blockly) {
             });
         }
     };
+	
+	Blockly.Blocks.adafruitIO_receive = {
+        init: function () {
+            this.jsonInit({
+                message0: Blockly.Msg.ADAFRUITIO_RECEIVE,
+                args0: [{
+                    type: 'input_value',
+                    name: 'aioin'
+                },
+                {
+                    type: 'input_value',
+                    name: 'aiofeed'
+                },
+                {
+                    type: 'input_value',
+                    name: 'aiofeedname'
+                }],
+                colour: color,
+                extensions: ['shape_statement']
+            });
+        }
+    };
 
     Blockly.Blocks.adafruitIO_send = {
         init: function () {
@@ -61,27 +83,7 @@ function addBlocks (Blockly) {
         }
     };
 
-    Blockly.Blocks.adafruitIO_receive = {
-        init: function () {
-            this.jsonInit({
-                message0: Blockly.Msg.ADAFRUITIO_RECEIVE,
-                args0: [{
-                    type: 'input_value',
-                    name: 'aioin'
-                },
-                {
-                    type: 'input_value',
-                    name: 'aiofeed'
-                },
-                {
-                    type: 'input_value',
-                    name: 'aiofeedname'
-                }],
-                colour: color,
-                extensions: ['shape_statement']
-            });
-        }
-    };
+    
 
     return Blockly;
 }

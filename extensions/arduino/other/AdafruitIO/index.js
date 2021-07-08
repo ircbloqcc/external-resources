@@ -19,6 +19,7 @@ const adafruitIO = formatMessage => ({
     generator: 'generator.js',
     toolbox: 'toolbox.js',
     msg: 'msg.js',
+	library: 'lib',
     tags: ['other'],
     helpLink: 'https://io.adafruit.com/'
 });

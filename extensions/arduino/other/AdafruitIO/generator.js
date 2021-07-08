@@ -7,7 +7,7 @@ function addGenerator (Blockly) {
         const aiossid = Blockly.Arduino.valueToCode(block, 'aiossid', Blockly.Arduino.ORDER_ATOMIC);
         const aiopswd = Blockly.Arduino.valueToCode(block, 'aiopswd', Blockly.Arduino.ORDER_ATOMIC);
 
-        Blockly.Arduino.includes_.adafruitIO_init = `#include <AdafruitIO_WiFi.h>`;
+        Blockly.Arduino.includes_.adafruitIO_init = `#include "AdafruitIO_WiFi.h"`;
         Blockly.Arduino.definitions_[`adafruitIO_begin`] =
     `const char* ssid = ${aiossid};\nconst char* password = ${aiopswd};\n`;
 
@@ -31,15 +31,15 @@ function addGenerator (Blockly) {
       return 'io.run();\n';
    };
    
-   Blockly.Arduino.adafruitIO_send = function (block) {
+   Blockly.Arduino.adafruitIO_receive = function (block) {
     // const no = Blockly.Arduino.valueToCode(block, 'no', Blockly.Arduino.ORDER_ATOMIC);
-     const aioout = Blockly.Arduino.valueToCode(block, 'aioout', Blockly.Arduino.ORDER_ATOMIC);
+     const aioin = Blockly.Arduino.valueToCode(block, 'aioin', Blockly.Arduino.ORDER_ATOMIC);
      const aiofeed = Blockly.Arduino.valueToCode(block, 'aiofeed', Blockly.Arduino.ORDER_ATOMIC);
      const aiofeedname = Blockly.Arduino.valueToCode(block, 'aiofeedname', Blockly.Arduino.ORDER_ATOMIC);
 
      Blockly.Arduino.definitions_[`adafruitIO_feed_${aiofeed}`] =
  `AdafruitIO_Feed *feed_${aiofeed} = io.feed(${aiofeedname});
-  void handlefeed_${aiofeed}(AdafruitIO_Data *data) {${aioout} = data->toInt();}`;
+  void handlefeed_${aiofeed}(AdafruitIO_Data *data) {${aioin} = data->toInt();}`;
 
       Blockly.Arduino.setups_[`adafruitIO_feed_${aiofeed}`] =
   `feed_${aiofeed}->onMessage(handlefeed_${aiofeed});
@@ -47,16 +47,17 @@ function addGenerator (Blockly) {
     return '';
  };
 
- Blockly.Arduino.adafruitIO_receive = function (block) {
+ Blockly.Arduino.adafruitIO_send = function (block) {
   // const no = Blockly.Arduino.valueToCode(block, 'no', Blockly.Arduino.ORDER_ATOMIC);
-   const aioin = Blockly.Arduino.valueToCode(block, 'aioin', Blockly.Arduino.ORDER_ATOMIC);
+   const aioout = Blockly.Arduino.valueToCode(block, 'aioout', Blockly.Arduino.ORDER_ATOMIC);
    const aiofeed = Blockly.Arduino.valueToCode(block, 'aiofeed', Blockly.Arduino.ORDER_ATOMIC);
    const aiofeedname = Blockly.Arduino.valueToCode(block, 'aiofeedname', Blockly.Arduino.ORDER_ATOMIC);
 
    Blockly.Arduino.definitions_[`adafruitIO_feed_${aiofeed}`] =
-`AdafruitIO_Feed *feed_${aiofeed} = io.feed(${aiofeedname});`
+`AdafruitIO_Feed *feed_${aiofeed} = io.feed(${aiofeedname});
+int last_${aiofeed} = 0;`
   
- return `if(last == ${aioin})\nreturn;\nfeed_${aiofeed}->save(${aioin});\nlast=${aioin};\n`;
+ return `if(last_${aiofeed} == ${aioout})\nreturn;\nfeed_${aiofeed}->save(${aioout});\nlast_${aiofeed}=${aioout};\n`;
 };  
     return Blockly;
 }

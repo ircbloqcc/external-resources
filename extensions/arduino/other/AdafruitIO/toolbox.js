@@ -17,7 +17,7 @@ function addToolbox () {
         </value>
     </block>
     
-    <block type="adafruitIO_userid" id="adafruitIO_usedid">
+    <block type="adafruitIO_userid" id="adafruitIO_userid">
         <value name="aiouserid">
             <shadow type="text">
                 <field name="TEXT">USERNAME</field>
@@ -30,6 +30,24 @@ function addToolbox () {
         </value>
     </block>
     
+	<block type="adafruitIO_receive" id="adafruitIO_receive">
+        <value name="aioin">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+        <value name="aiofeed">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+        <value name="aiofeedname">
+            <shadow type="text">
+                <field name="TEXT">FEED_NAME</field>
+            </shadow>
+        </value>
+    </block>
+	
     <block type="adafruitIO_send" id="adafruitIO_send">
         <value name="aioout">
             <shadow type="math_number">
@@ -48,23 +66,7 @@ function addToolbox () {
         </value>
     </block>
 
-    <block type="adafruitIO_receive" id="adafruitIO_receive">
-        <value name="aioin">
-            <shadow type="math_number">
-                <field name="NUM">0</field>
-            </shadow>
-        </value>
-        <value name="aiofeed">
-            <shadow type="math_number">
-                <field name="NUM">0</field>
-            </shadow>
-        </value>
-        <value name="aiofeedname">
-            <shadow type="text">
-                <field name="TEXT">FEED_NAME</field>
-            </shadow>
-        </value>
-    </block>
+    
     
 </category>`;
 }

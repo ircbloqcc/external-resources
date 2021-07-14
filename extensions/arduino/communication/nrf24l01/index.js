@@ -4,7 +4,7 @@ const nrf24l01 = formatMessage => ({
     version: '1.0.0',
     supportDevice: ['arduinoUno', 'arduinoNano', 'arduinoMini', 'arduinoLeonardo',
         'arduinoMega2560', 'arduinoEsp8266', 'arduinoEsp32'],
-    author: 'ArthurZheng',
+    author: 'iRobochakra',
     iconURL: `asset/nrf24l01.png`,
     description: formatMessage({
         id: 'nrf24l01.description',

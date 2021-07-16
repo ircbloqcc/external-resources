@@ -19,7 +19,7 @@ const HC05BluetoothEsp8266 = formatMessage => ({
     generator: 'generator.js',
     toolbox: 'toolbox.js',
     msg: 'msg.js',
-    tags: ['other'],
+    tags: ['communication'],
     helpLink: 'https://openblockcc.gitee.io/wiki/'
 });
 

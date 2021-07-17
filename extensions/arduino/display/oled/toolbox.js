@@ -3,7 +3,7 @@
 /* eslint-disable require-jsdoc */
 function addToolbox () {
     return `
-<category name="%{BKY_OLED_CATEGORY}" id="OLED_CATEGORY" colour="#C0C0C0" secondaryColour="#A9A9A9">
+<category name="%{BKY_OLED_CATEGORY}" id="OLED_CATEGORY" colour="#4f7ce3" secondaryColour="#375bb0">
     <block type="oled_init" id="oled_init">
         <value name="W">
             <shadow type="math_whole_number">
@@ -253,7 +253,7 @@ function addToolbox () {
     <block type="oled_print" id="oled_print">
         <value name="DATA">
             <shadow type="text">
-                <field name="TEXT">Hello OpenBlock</field>
+                <field name="TEXT">Hello ircBloq</field>
             </shadow>
         </value>
     </block>

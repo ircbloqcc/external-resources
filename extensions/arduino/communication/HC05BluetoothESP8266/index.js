@@ -20,7 +20,7 @@ const HC05BluetoothEsp8266 = formatMessage => ({
     toolbox: 'toolbox.js',
     msg: 'msg.js',
     tags: ['communication'],
-    helpLink: 'https://openblockcc.gitee.io/wiki/'
+    helpLink: ''
 });
 
 module.exports = HC05BluetoothEsp8266;

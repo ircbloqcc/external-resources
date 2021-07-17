@@ -12,6 +12,12 @@ function addGenerator (Blockly) {
         Blockly.Arduino.definitions_[`HC05Bluetooth_begin`] = `SoftwareSerial HC05Bluetooth(${rx}, ${tx});`;
         return `HC05Bluetooth.begin(${baudrate});\n`;
     };
+	
+	Blockly.Arduino.HC05Bluetooth_timeout = function (block) {
+       // const no = Blockly.Arduino.valueToCode(block, 'no', Blockly.Arduino.ORDER_ATOMIC);
+        const tout = Blockly.Arduino.valueToCode(block, 'toout', Blockly.Arduino.ORDER_ATOMIC);
+        return `HC05Bluetooth.setTimeout(${tout});\n`;
+    };
 
     Blockly.Arduino.HC05Bluetooth_print = function (block) {
        /// const no = Blockly.Arduino.valueToCode(block, 'no', Blockly.Arduino.ORDER_ATOMIC);

@@ -17,6 +17,13 @@ function addToolbox () {
         </value>
         <field name="baudrate">9600</field>
     </block>
+	<block type="HC05Bluetooth_timeout" id="HC05Bluetooth_timeout">
+        <value name="tout">
+            <shadow type="math_number">
+                <field name="NUM">100</field>
+            </shadow>
+        </value>
+    </block>
     <block type="HC05Bluetooth_print" id="HC05Bluetooth_print">
         <value name="data">
             <shadow type="text">

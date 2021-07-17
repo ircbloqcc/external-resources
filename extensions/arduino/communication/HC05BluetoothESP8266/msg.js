@@ -4,6 +4,7 @@ function addMsg (Blockly) {
     Object.assign(Blockly.ScratchMsgs.locales.en, {
         HC05BLUETOOTHESP8266_CATEGORY: 'HC05 Bluetooth',
         HC05BLUETOOTHESP8266_BEGIN: 'HC05 Bluetooth : RX pin %1 TX pin %2 begin baudrate %3',
+        HC05BLUETOOTH_TIMEOUT: 'HC05 Bluetooth set timeout %1',
         HC05BLUETOOTHESP8266_PRINT: 'HC05 Bluetooth print %1',
         HC05BLUETOOTHESP8266_AVAILABLE: 'HC05 Bluetooth available data length',
         HC05BLUETOOTHESP8266_READABYTE: 'HC05 Bluetooth read a byte',
@@ -14,6 +15,7 @@ function addMsg (Blockly) {
     Object.assign(Blockly.ScratchMsgs.locales['zh-cn'], {
         HC05BLUETOOTHESP8266_CATEGORY: 'HC05 Bluetooth',
         HC05BLUETOOTHESP8266_BEGIN: 'HC05 Bluetooth : RX pin %1 TX pin %2 begin baudrate %3',
+        HC05BLUETOOTH_TIMEOUT: 'HC05 Bluetooth set timeout %1',
         HC05BLUETOOTHESP8266_PRINT: 'HC05 Bluetooth print %1',
         HC05BLUETOOTHESP8266_AVAILABLE: 'HC05 Bluetooth available data length',
         HC05BLUETOOTHESP8266_READABYTE: 'HC05 Bluetooth read a byte',

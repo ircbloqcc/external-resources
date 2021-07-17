@@ -8,7 +8,7 @@ const servo = formatMessage => ({
     version: '1.0.0',
     type: 'microbit',
     supportDevice: ['microbit'],
-    author: 'ArthurZheng',
+    author: 'iRobochakra',
     iconURL: `asset/servo.png`,
     description: formatMessage({
         id: 'servo.description',
@@ -22,7 +22,7 @@ const servo = formatMessage => ({
     msg: 'msg.js',
     library: 'lib',
     tags: ['actuator'],
-    helpLink: 'https://openblockcc.gitee.io/wiki/'
+    helpLink: ''
 });
 
 module.exports = servo;

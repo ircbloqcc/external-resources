@@ -30,6 +30,20 @@ function addBlocks (Blockly) {
             });
         }
     };
+	
+	Blockly.Blocks.HC05BluetoothEsp8266_timeout = {
+        init: function () {
+            this.jsonInit({
+                message0: Blockly.Msg.HC05BLUETOOTHESP8266_TIMEOUT,
+                args0: [{
+                    type: 'input_value',
+                    name: 'tout'
+                }],
+                colour: color,
+                extensions: ['shape_statement']
+            });
+        }
+    };
 
     Blockly.Blocks.HC05BluetoothEsp8266_print = {
         init: function () {

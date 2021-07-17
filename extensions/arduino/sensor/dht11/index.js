@@ -3,7 +3,7 @@ const dht11 = formatMessage => ({
     extensionId: 'dht11',
     version: '1.0.0',
     supportDevice: ['arduinoUno', 'arduinoNano', 'arduinoLeonardo', 'arduinoMega2560', 'arduinoEsp32'],
-    author: 'ArthurZheng',
+    author: 'iRobochakra',
     iconURL: `asset/DTH11.png`,
     description: formatMessage({
         id: 'dht11.description',
@@ -17,7 +17,7 @@ const dht11 = formatMessage => ({
     msg: 'msg.js',
     library: 'lib',
     tags: ['sensor'],
-    helpLink: 'https://openblockcc.gitee.io/wiki/'
+    helpLink: ''
 });
 
 module.exports = dht11;

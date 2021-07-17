@@ -2,8 +2,8 @@
 /* eslint-disable max-len */
 /* eslint-disable require-jsdoc */
 function addBlocks (Blockly) {
-    const colour = '#C0C0C0';
-    const secondaryColour = '#A9A9A9';
+    const colour = '#4f7ce3';
+    const secondaryColour = '#375bb0';
 
     Blockly.Blocks.oled_init = {
         init: function () {

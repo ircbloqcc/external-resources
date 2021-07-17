@@ -12,6 +12,12 @@ function addGenerator (Blockly) {
         Blockly.Arduino.definitions_[`HC05BluetoothEsp8266_begin`] = `SoftwareSerial HC05BluetoothEsp8266;`;
         return `HC05BluetoothEsp8266.begin(${baudrate}, SWSERIAL_8N1, ${rx}, ${tx}, false, 95, 11);\n`;
     };
+	
+	Blockly.Arduino.HC05BluetoothEsp8266_timeout = function (block) {
+       // const no = Blockly.Arduino.valueToCode(block, 'no', Blockly.Arduino.ORDER_ATOMIC);
+        const tout = Blockly.Arduino.valueToCode(block, 'toout', Blockly.Arduino.ORDER_ATOMIC);
+        return `HC05BluetoothEsp8266.setTimeout(${tout});\n`;
+    };
 
     Blockly.Arduino.HC05BluetoothEsp8266_print = function (block) {
        /// const no = Blockly.Arduino.valueToCode(block, 'no', Blockly.Arduino.ORDER_ATOMIC);

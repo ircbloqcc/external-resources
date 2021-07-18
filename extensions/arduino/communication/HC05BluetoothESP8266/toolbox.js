@@ -5,16 +5,8 @@ function addToolbox () {
     return `
 <category name="%{BKY_HC05BLUETOOTHESP8266_CATEGORY}" id="HC05BLUETOOTHESP8266_CATEGORY" colour="#00D7B0" secondaryColour="#00D7B0">
     <block type="HC05BluetoothEsp8266_begin" id="HC05BluetoothEsp8266_begin">
-        <value name="rx">
-            <shadow type="math_number">
-                <field name="NUM">10</field>
-            </shadow>
-        </value>
-        <value name="tx">
-            <shadow type="math_number">
-                <field name="NUM">11</field>
-            </shadow>
-        </value>
+                <field name="rx">D5</field>
+                <field name="tx">D6</field>
         <field name="baudrate">9600</field>
     </block>
 	<block type="HC05BluetoothEsp8266_timeout" id="HC05BluetoothEsp8266_timeout">

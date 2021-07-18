@@ -3,17 +3,24 @@
 /* eslint-disable require-jsdoc */
 function addBlocks (Blockly) {
     const color = '#00D7B0';
-
+	const digitalPins = Blockly.getMainWorkspace().getFlyout()
+        .getFlyoutItems()
+        .find(block => block.type === 'arduino_pin_setDigitalOutput')
+        .getField('PIN')
+        .getOptions();
+		
     Blockly.Blocks.HC05BluetoothEsp8266_begin = {
         init: function () {
             this.jsonInit({
                 message0: Blockly.Msg.HC05BLUETOOTHESP8266_BEGIN,
                 args0: [{
-                    type: 'input_value',
-                    name: 'rx'
+                    type: 'field_dropdown',
+                    name: 'rx',
+					options: digitalPins
                 }, {
-                    type: 'input_value',
-                    name: 'tx'
+                    type: 'field_dropdown',
+                    name: 'tx',
+					options: digitalPins
                 }, {
                     type: 'field_dropdown',
                     name: 'baudrate',

@@ -4,8 +4,8 @@
 function addGenerator (Blockly) {
     Blockly.Arduino.HC05BluetoothEsp8266_begin = function (block) {
        // const no = Blockly.Arduino.valueToCode(block, 'no', Blockly.Arduino.ORDER_ATOMIC);
-        const rx = Blockly.Arduino.valueToCode(block, 'rx', Blockly.Arduino.ORDER_ATOMIC);
-        const tx = Blockly.Arduino.valueToCode(block, 'tx', Blockly.Arduino.ORDER_ATOMIC);
+        const rx = this.getFieldValue('rx');
+        const tx = this.getFieldValue('tx');
         const baudrate = this.getFieldValue('baudrate');
 
         Blockly.Arduino.includes_.dht_init = `#include <SoftwareSerial.h>`;
@@ -15,7 +15,7 @@ function addGenerator (Blockly) {
 	
 	Blockly.Arduino.HC05BluetoothEsp8266_timeout = function (block) {
        // const no = Blockly.Arduino.valueToCode(block, 'no', Blockly.Arduino.ORDER_ATOMIC);
-        const tout = Blockly.Arduino.valueToCode(block, 'toout', Blockly.Arduino.ORDER_ATOMIC);
+        const tout = Blockly.Arduino.valueToCode(block, 'tout', Blockly.Arduino.ORDER_ATOMIC);
         return `HC05BluetoothEsp8266.setTimeout(${tout});\n`;
     };
 

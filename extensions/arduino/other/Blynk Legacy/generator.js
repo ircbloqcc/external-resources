@@ -4,9 +4,9 @@
 function addGenerator (Blockly) {
     Blockly.Arduino.Blynk_begin = function (block) {
        // const no = Blockly.Arduino.valueToCode(block, 'no', Blockly.Arduino.ORDER_ATOMIC);
-        Blockly.Arduino.includes_.Blynk_init = `#include "BlynkSimpleEsp8266.h"`;
-        Blockly.Arduino.definitions_[`Blynk_begin`] =
-    `#define BLYNK_PRINT Serial`;
+        Blockly.Arduino.includes_.Blynk_init = `
+#define BLYNK_PRINT Serial
+#include "BlynkSimpleEsp8266.h"`;
       return '';
     };
      
@@ -16,9 +16,7 @@ function addGenerator (Blockly) {
        const blynkpass = Blockly.Arduino.valueToCode(block, 'blynkpass', Blockly.Arduino.ORDER_ATOMIC);
        const blynkauth = Blockly.Arduino.valueToCode(block, 'blynkauth', Blockly.Arduino.ORDER_ATOMIC);
        
-       Blockly.Arduino.setups_[`Blynk_userid`] = 
-	`Blynk.begin(${blynkauth}, ${blynkssid}, ${blynkpass});`;
-      return '';
+      return `Blynk.begin(${blynkauth}, ${blynkssid}, ${blynkpass});\n`;
    };
    
    Blockly.Arduino.Blynk_start = function (block) {

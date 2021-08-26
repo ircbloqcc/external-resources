@@ -4,7 +4,7 @@ function addMsg (Blockly) {
     Object.assign(Blockly.ScratchMsgs.locales.en, {
         LOCALSERVER_CATEGORY: 'LocalServer',
         LOCALSERVER_BEGIN: 'Connect SSID %1 Password %2 for LocalServer',
-        LOCALSERVER_APBEGIN: 'Connect SSID %1 Password %2 for Access Point',
+        LOCALSERVER_APBEGIN: 'Set SSID %1 Password %2 for Access Point',
         LOCALSERVER_GETREQUEST: 'Read Request from Client',
         LOCALSERVER_CHKREQUEST: 'Check Request == %1',
         LOCALSERVER_CLIENTFLUSH:'Client Data Flush',
@@ -16,7 +16,7 @@ function addMsg (Blockly) {
     Object.assign(Blockly.ScratchMsgs.locales['zh-cn'], {
         LOCALSERVER_CATEGORY: 'LocalServer',
         LOCALSERVER_BEGIN: 'Connect SSID %1 Password %2 for LocalServer',
-        LOCALSERVER_APBEGIN: 'Connect SSID %1 Password %2 for Access Point',
+        LOCALSERVER_APBEGIN: 'Set SSID %1 Password %2 for Access Point',
         LOCALSERVER_GETREQUEST: 'Read Request from Client',
         LOCALSERVER_CHKREQUEST: 'Check Request == %1',
         LOCALSERVER_CLIENTFLUSH:'Client Data Flush',

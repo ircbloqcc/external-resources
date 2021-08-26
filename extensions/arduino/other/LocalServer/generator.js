@@ -52,7 +52,7 @@ function addGenerator (Blockly) {
      server.begin();
      Serial.println("Server started");
      Serial.print("ip Address : ");
-     Serial.println(apip)`;
+     Serial.println(apip);`;
         return '';
      };
 

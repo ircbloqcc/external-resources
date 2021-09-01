@@ -3,7 +3,7 @@
 function addMsg (Blockly) {
     Object.assign(Blockly.ScratchMsgs.locales.en, {
         HC05BLUETOOTH_CATEGORY: 'HC05 Bluetooth',
-        HC05BLUETOOTH_BEGIN: 'HC05 Bluetooth : RX pin %1 TX pin %2 begin baudrate %3',
+        HC05BLUETOOTH_BEGIN: 'HC05 Bluetooth : TX pin %1 RX pin %2 begin baudrate %3',
 		HC05BLUETOOTH_TIMEOUT: 'HC05 Bluetooth set timeout %1',
         HC05BLUETOOTH_PRINT: 'HC05 Bluetooth print %1',
         HC05BLUETOOTH_AVAILABLE: 'HC05 Bluetooth available data length',
@@ -14,7 +14,7 @@ function addMsg (Blockly) {
     });
     Object.assign(Blockly.ScratchMsgs.locales['zh-cn'], {
         HC05BLUETOOTH_CATEGORY: 'HC05 Bluetooth',
-        HC05BLUETOOTH_BEGIN: 'HC05 Bluetooth : RX pin %1 TX pin %2 begin baudrate %3',
+        HC05BLUETOOTH_BEGIN: 'HC05 Bluetooth : TX pin %1 RX pin %2 begin baudrate %3',
 		HC05BLUETOOTH_TIMEOUT: 'HC05 Bluetooth set timeout %1',
         HC05BLUETOOTH_PRINT: 'HC05 Bluetooth print %1',
         HC05BLUETOOTH_AVAILABLE: 'HC05 Bluetooth available data length',

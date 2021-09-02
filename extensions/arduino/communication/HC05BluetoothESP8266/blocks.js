@@ -59,7 +59,17 @@ function addBlocks (Blockly) {
                 args0: [{
                     type: 'input_value',
                     name: 'data'
-                }],
+                },
+				,
+                    {
+                        type: 'field_dropdown',
+                        name: 'EOL',
+                        options: [
+                            [Blockly.Msg.HC05BLUETOOTHESP8266_WARP, '0'],
+                            [Blockly.Msg.HC05BLUETOOTHESP8266_NOWARP, '1']
+                        ]
+                    }
+                ],
                 colour: color,
                 extensions: ['shape_statement']
             });

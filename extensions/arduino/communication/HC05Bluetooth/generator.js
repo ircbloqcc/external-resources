@@ -22,7 +22,12 @@ function addGenerator (Blockly) {
     Blockly.Arduino.HC05Bluetooth_print = function (block) {
        /// const no = Blockly.Arduino.valueToCode(block, 'no', Blockly.Arduino.ORDER_ATOMIC);
         const data = Blockly.Arduino.valueToCode(block, 'data', Blockly.Arduino.ORDER_ATOMIC);
-        return `HC05Bluetooth.println(${data});\n`;
+         const eol = this.getFieldValue('EOL');
+
+        if (eol === '0') {
+            return `HC05Bluetooth.println(${data});\n`;
+        }
+        return `HC05Bluetooth.print(${data});\n`;
     };
 
     Blockly.Arduino.HC05Bluetooth_available = function (block) {

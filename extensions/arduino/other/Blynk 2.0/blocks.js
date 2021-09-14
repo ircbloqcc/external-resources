@@ -8,14 +8,43 @@ function addBlocks (Blockly) {
         init: function () {
             this.jsonInit({
                 message0: Blockly.Msg.BLYNK_BEGIN,
-                args0: [],
+                args0: [{
+                        type: 'field_dropdown',
+                        name: 'baudrate',
+                        options: [
+                            ['4800', '4800'],
+                            ['9600', '9600'],
+                            ['19200', '19200'],
+                            ['38400', '38400'],
+                            ['57600', '57600'],
+                            ['115200', '115200']]
+                    }],
                 colour: color,
                 extensions: ['shape_statement']
             });
         }
     };
 
-    Blockly.Blocks.Blynk_userid = {
+    Blockly.Blocks.Blynk_templateid = {
+        init: function () {
+            this.jsonInit({
+                message0: Blockly.Msg.BLYNK_TEMPLATEID,
+                args0: [{
+                    type: 'input_value',
+                    name: 'blynktempid'
+                },
+                {
+                    type: 'input_value',
+                    name: 'blynkdname'
+                }],
+                colour: color,
+                extensions: ['shape_statement']
+            });
+        }
+    };
+	
+	
+	Blockly.Blocks.Blynk_userid = {
         init: function () {
             this.jsonInit({
                 message0: Blockly.Msg.BLYNK_USERID,
@@ -36,7 +65,6 @@ function addBlocks (Blockly) {
             });
         }
     };
-	
 	Blockly.Blocks.Blynk_start = {
         init: function () {
             this.jsonInit({
@@ -81,6 +109,38 @@ function addBlocks (Blockly) {
                 {
                     type: 'input_value',
                     name: 'msec'
+                }],
+                colour: color,
+                extensions: ['shape_statement']
+            });
+        }
+    };
+	
+	Blockly.Blocks.Blynk_string = {
+        init: function () {
+            this.jsonInit({
+                message0: Blockly.Msg.BLYNK_STRING,
+                args0: [{
+                    type: 'input_value',
+                    name: 'blynkstr'
+                }],
+                colour: color,
+                extensions: ['output_number']
+            });
+        }
+    };
+
+	Blockly.Blocks.Blynk_stringeql = {
+        init: function () {
+            this.jsonInit({
+                message0: Blockly.Msg.BLYNK_STRINGEQL,
+                args0: [{
+                    type: 'input_value',
+                    name: 'blynkstr'
+                },
+				{
+                    type: 'input_value',
+                    name: 'blynkstreq'
                 }],
                 colour: color,
                 extensions: ['shape_statement']

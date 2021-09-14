@@ -3,20 +3,38 @@
 /* eslint-disable require-jsdoc */
 function addGenerator (Blockly) {
     Blockly.Arduino.Blynk_begin = function (block) {
-       // const no = Blockly.Arduino.valueToCode(block, 'no', Blockly.Arduino.ORDER_ATOMIC);
+        const baudrate = this.getFieldValue('baudrate');
         Blockly.Arduino.includes_.Blynk_init = `
 #define BLYNK_PRINT Serial
+#include <ESP8266WiFi.h>
 #include "BlynkSimpleEsp8266.h"`;
+		Blockly.Arduino.setups_.Blynk_init = `Serial.begin(${baudrate});`;
       return '';
     };
+	
+	Blockly.Arduino.Blynk_templateid = function (block) {
+      // const no = Blockly.Arduino.valueToCode(block, 'no', Blockly.Arduino.ORDER_ATOMIC);
+       const blynktempid = Blockly.Arduino.valueToCode(block, 'blynktempid', Blockly.Arduino.ORDER_ATOMIC);
+       const blynkdname = Blockly.Arduino.valueToCode(block, 'blynkdname', Blockly.Arduino.ORDER_ATOMIC);
+       Blockly.Arduino.includes_.Blynk_templateid = `
+#define BLYNK_TEMPLATE_ID ${blynktempid}
+#define BLYNK_DEVICE_NAME ${blynkdname}`;
+      return '';
+   };
      
     Blockly.Arduino.Blynk_userid = function (block) {
       // const no = Blockly.Arduino.valueToCode(block, 'no', Blockly.Arduino.ORDER_ATOMIC);
        const blynkssid = Blockly.Arduino.valueToCode(block, 'blynkssid', Blockly.Arduino.ORDER_ATOMIC);
        const blynkpass = Blockly.Arduino.valueToCode(block, 'blynkpass', Blockly.Arduino.ORDER_ATOMIC);
        const blynkauth = Blockly.Arduino.valueToCode(block, 'blynkauth', Blockly.Arduino.ORDER_ATOMIC);
-       
-      return `Blynk.begin(${blynkauth}, ${blynkssid}, ${blynkpass});\n`;
+       Blockly.Arduino.includes_.Blynk_userid = `#define BLYNK_AUTH_TOKEN ${blynkauth}`
+
+		Blockly.Arduino.definitions_.Blynk_userid = `
+char auth[] = BLYNK_AUTH_TOKEN;
+char ssid[] = ${blynkssid};
+char pass[] = ${blynkpass};`;
+		Blockly.Arduino.setups_.Blynk_userid = `Blynk.begin(auth, ssid, pass);`;
+		return '';
    };
    
    Blockly.Arduino.Blynk_start = function (block) {
@@ -54,6 +72,21 @@ function addGenerator (Blockly) {
   `timer.run();`;
  return '';
 };  
+
+Blockly.Arduino.Blynk_string = function (block) {
+        var blynkstr = Blockly.Arduino.valueToCode(block, 'blynkstr', Blockly.Arduino.ORDER_ATOMIC);
+		blynkstr = blynkstr.replace(/\"/g, "");
+        Blockly.Arduino.definitions_[`Blynk_${blynkstr}`] = `String ${blynkstr};`;
+		return [`${blynkstr}`, Blockly.Arduino.ORDER_ATOMIC];
+    };
+	
+ Blockly.Arduino.Blynk_stringeql = function (block) {
+		var blynkstr = Blockly.Arduino.valueToCode(block, 'blynkstr', Blockly.Arduino.ORDER_ATOMIC);
+		blynkstr = blynkstr.replace(/\"/g, "");
+        var blynkstreq = Blockly.Arduino.valueToCode(block, 'blynkstreq', Blockly.Arduino.ORDER_ATOMIC);
+		return `${blynkstr} = ${blynkstreq};\n`;
+    };
+	
     return Blockly;
 }
 

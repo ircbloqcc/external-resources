@@ -2,7 +2,7 @@ const Amingo = formatMessage => ({
     name: 'Amingo',
     deviceId: 'Amingo_arduinoUno',
     manufactor: 'iRobochakra',
-    leanMore: '',
+    learnMore: '',
     iconURL: 'asset/Amingo.png',
     description: formatMessage({
         id: 'Amingo.description',

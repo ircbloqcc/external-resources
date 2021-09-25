@@ -2,7 +2,7 @@ const iBotV2 = formatMessage => ({
     name: 'iBot V2',
     deviceId: 'iBotV2_arduinoUno',
     manufactor: 'iRobochakra',
-    leanMore: '',
+    learnMore: '',
     iconURL: 'asset/iBotV2.png',
     description: formatMessage({
         id: 'iBotV2.description',

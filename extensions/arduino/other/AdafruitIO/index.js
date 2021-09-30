@@ -5,7 +5,7 @@ const adafruitIO = formatMessage => ({
         description: 'Name of Adafruit IO'
     }),
     extensionId: 'adafruitIO',
-    version: '1.0.0',
+    version: '1.1.0',
     supportDevice: 'arduinoEsp8266',
     author: 'iRobochakra',
     iconURL: `asset/adafruitIO.png`,

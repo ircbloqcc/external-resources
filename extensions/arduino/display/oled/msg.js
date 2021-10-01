@@ -3,7 +3,7 @@
 function addMsg (Blockly) {
     Object.assign(Blockly.ScratchMsgs.locales.en, {
         OLED_CATEGORY: 'OLED',
-        OLED_INIT: 'init %1 I2C address %2',
+        OLED_INIT: 'init %1 width %2 height %3 I2C address %4',
 		OLED_SETFONTS: 'set %1 Font %2', 
         OLED_DRAWLINE: 'draw %1 line x0: %2 y0: %3, x1: %4 y1：%5color %6',
         OLED_COLOR_WHITE: 'white',
@@ -29,7 +29,9 @@ function addMsg (Blockly) {
         OLED_SCROLL_LEFT: 'left',
         OLED_SCROLL_DIAGRIGHT: 'diag right',
         OLED_SCROLL_DIAGLEFT: 'diag left',
-        OLED_STOPSCROLL: 'stop %1 scroll'
+        OLED_STOPSCROLL: 'stop %1 scroll',
+		OLED_STRING: 'String Variable %1',
+		OLED_STRINGEQL: 'Assign %1 = %2'
     });
     Object.assign(Blockly.ScratchMsgs.locales['zh-cn'], {
         OLED_CATEGORY: 'OLED',
@@ -59,7 +61,9 @@ function addMsg (Blockly) {
         OLED_SCROLL_LEFT: 'left',
         OLED_SCROLL_DIAGRIGHT: 'diag right',
         OLED_SCROLL_DIAGLEFT: 'diag left',
-        OLED_STOPSCROLL: 'stop %1 scroll'
+        OLED_STOPSCROLL: 'stop %1 scroll',
+		OLED_STRING: 'String Variable %1',
+		OLED_STRINGEQL: 'Assign %1 = %2'
     });
     return Blockly;
 }

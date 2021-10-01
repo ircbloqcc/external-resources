@@ -5,9 +5,17 @@ function addToolbox () {
     return `
 <category name="%{BKY_OLED_CATEGORY}" id="OLED_CATEGORY" colour="#6666ff" secondaryColour="#A9A9A9">
     <block type="oled_init" id="oled_init">
+	<value name="X">
+            <shadow type="math_whole_number">
+                <field name="NUM">128</field>
+            </shadow>
+        </value>
+        <value name="Y">
+            <shadow type="math_whole_number">
+                <field name="NUM">64</field>
+            </shadow>
+        </value>
     </block>
-	<block type="oled_setFonts" id="oled_setFonts">
-	</block>
 <sep gap="36"/>
     <block type="oled_drawLine" id="oled_drawLine">
         <value name="X0">
@@ -232,6 +240,8 @@ function addToolbox () {
         </value>
     </block>
 	<sep gap="36"/>
+	<block type="oled_setFonts" id="oled_setFonts">
+	</block>
     <block type="oled_setText" id="oled_setText">
     </block>
     <block type="oled_setCursor" id="oled_setCursor">
@@ -261,6 +271,31 @@ function addToolbox () {
     </block>
     <block type="oled_stopScroll" id="oled_stopScroll">
     </block>
+	<block type="oled_string" id="oled_string">
+        <value name="oledstr">
+            <shadow type="text">
+                <field name="TEXT">oled_string</field>
+            </shadow>
+        </value>
+    </block>
+	
+	<block type="oled_stringeql" id="oled_stringeql">
+        <value name="oledstr">
+            <block type="oled_string" id="oled_string">
+        <value name="oledstr">
+            <shadow type="text">
+                <field name="TEXT">oled_string</field>
+            </shadow>
+        </value>
+    </block>
+        </value>
+		<value name="oledstreq">
+            <shadow type="text">
+                <field name="TEXT"></field>
+            </shadow>
+        </value>
+    </block>
+	
 </category>`;
 }
 

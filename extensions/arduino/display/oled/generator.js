@@ -4,11 +4,15 @@
 function addGenerator (Blockly) {
     Blockly.Arduino.oled_init = function (block) {
 		const disp = block.getFieldValue('disp');
+		const x = Blockly.Arduino.valueToCode(block, 'X', Blockly.Arduino.ORDER_ATOMIC);
+        const y = Blockly.Arduino.valueToCode(block, 'Y', Blockly.Arduino.ORDER_ATOMIC);
         const addr = block.getFieldValue('ADDR');
 
         Blockly.Arduino.includes_.oled_init = `#include <Wire.h>\n#include <Adafruit_GFX.h>\n#include <Adafruit_SSD1306.h>`;
-        Blockly.Arduino.definitions_.oled_init = `#define OLED_RESET 4`;
-		Blockly.Arduino.definitions_[`oled_init_${disp}`] = `Adafruit_SSD1306 ${disp}(OLED_RESET);`;
+        Blockly.Arduino.definitions_.oled_init = `#define OLED_RESET -1
+#define SCREEN_WIDTH ${x} // OLED display width, in pixels
+#define SCREEN_HEIGHT ${y} // OLED display height, in pixels`;
+		Blockly.Arduino.definitions_[`oled_init_${disp}`] = `Adafruit_SSD1306 ${disp}(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);`;
 
         return `${disp}.begin(SSD1306_SWITCHCAPVCC, ${addr});\n`;
     };
@@ -183,6 +187,21 @@ function addGenerator (Blockly) {
     Blockly.Arduino.oled_stopScroll = function (block) {
 	const disp = block.getFieldValue('disp');
         return `${disp}.stopscroll();\n`;
+    };
+	
+	Blockly.Arduino.oled_string = function (block) {
+        var oledstr = Blockly.Arduino.valueToCode(block, 'oledstr', Blockly.Arduino.ORDER_ATOMIC);
+        var oledstr = Blockly.Arduino.valueToCode(block, 'oledstr', Blockly.Arduino.ORDER_ATOMIC);
+		oledstr = oledstr.replace(/\"/g, "");
+        Blockly.Arduino.definitions_[`oled_${oledstr}`] = `char* ${oledstr};`;
+		return [`${oledstr}`, Blockly.Arduino.ORDER_ATOMIC];
+    };
+	
+  Blockly.Arduino.oled_stringeql = function (block) {
+		var oledstr = Blockly.Arduino.valueToCode(block, 'oledstr', Blockly.Arduino.ORDER_ATOMIC);
+		oledstr = oledstr.replace(/\"/g, "");
+        var oledstreq = Blockly.Arduino.valueToCode(block, 'oledstreq', Blockly.Arduino.ORDER_ATOMIC);
+		return `${oledstr} = ${oledstreq};\n`;
     };
 
     return Blockly;

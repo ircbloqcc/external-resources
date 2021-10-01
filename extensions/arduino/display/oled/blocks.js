@@ -71,6 +71,14 @@ function addBlocks (Blockly) {
                         ]
                     },
                     {
+                        type: 'input_value',
+                        name: 'X'
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'Y'
+                    },
+                    {
                         type: 'field_dropdown',
                         name: 'ADDR',
                         options: [
@@ -766,6 +774,40 @@ function addBlocks (Blockly) {
                             ['display2','display2']
                         ]
                     }],
+                colour: colour,
+                secondaryColour: secondaryColour,
+                extensions: ['shape_statement']
+            });
+        }
+    };
+	
+	Blockly.Blocks.oled_string = {
+        init: function () {
+            this.jsonInit({
+                message0: Blockly.Msg.OLED_STRING,
+                args0: [{
+                    type: 'input_value',
+                    name: 'oledstr'
+                }],
+                colour: colour,
+                secondaryColour: secondaryColour,
+                extensions: ['output_number']
+            });
+        }
+    };
+
+	Blockly.Blocks.oled_stringeql = {
+        init: function () {
+            this.jsonInit({
+                message0: Blockly.Msg.OLED_STRINGEQL,
+                args0: [{
+                    type: 'input_value',
+                    name: 'oledstr'
+                },
+				{
+                    type: 'input_value',
+                    name: 'oledstreq'
+                }],
                 colour: colour,
                 secondaryColour: secondaryColour,
                 extensions: ['shape_statement']

@@ -10,6 +10,7 @@ module.exports = [
     'arduinoLeonardo',
     'arduinoMega2560',
     'arduinoEsp32',
+	'maixduino',
     'microbit',
     'microbitV2',
     'makeyMakey'

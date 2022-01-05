@@ -4,9 +4,6 @@
 function addToolbox () {
     return `
 	<category name="%{BKY_BLYNK_CATEGORY}" id="BLYNK_CATEGORY" colour="#23be8a" secondaryColour="#23be8a" >
-    <block type="Blynk_begin" id="Blynk_begin">
-	<field name="baudrate">115200</field>
-    </block>
     <block type="Blynk_templateid" id="Blynk_templateid">
         <value name="blynktempid">
             <shadow type="text">
@@ -18,6 +15,9 @@ function addToolbox () {
                 <field name="TEXT">Device Name</field>
             </shadow>
         </value>
+    </block>
+	<block type="Blynk_begin" id="Blynk_begin">
+	<field name="baudrate">115200</field>
     </block>
 	<block type="Blynk_userid" id="Blynk_userid">
         <value name="blynkssid">

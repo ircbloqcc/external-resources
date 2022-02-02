@@ -95,7 +95,7 @@ function addBlocks (Blockly) {
                 message0: Blockly.Msg.HC05BLUETOOTH_READINTEGER,
                 args0: [],
                 colour: color,
-                extensions: ['output_string']
+                extensions: ['output_number']
             });
         }
     };

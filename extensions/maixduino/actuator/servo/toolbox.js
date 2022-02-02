@@ -3,8 +3,8 @@
 /* eslint-disable require-jsdoc */
 function addToolbox () {
     return `
-<category name="%{BKY_SERVO_MICROBIT_CATEGORY}" id="SERVO_MICROBIT_CATEGORY" colour="#FF6F00" secondaryColour="#FF6F00" iconURI="">
-    <block type="servo_write_microbit" id="servo_write_microbit">
+<category name="%{BKY_SERVO_MAIXDUINO_CATEGORY}" id="SERVO_MAIXDUINO_CATEGORY" colour="#FF6F00" secondaryColour="#FF6F00" iconURI="">
+    <block type="servo_write_maixduino" id="servo_write_maixduino">
         <value name="degree">
             <shadow type="math_angle">
                 <field name="NUM">90</field>

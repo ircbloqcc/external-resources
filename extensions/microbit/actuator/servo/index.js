@@ -1,19 +1,19 @@
-const servo = formatMessage => ({
+const servo_microbit = formatMessage => ({
     name: formatMessage({
-        id: 'servo.name',
+        id: 'servo.name.microbit',
         default: 'Servo',
-        description: 'Name of servo'
+        description: 'Name of servo microbit'
     }),
-    extensionId: 'servo',
+    extensionId: 'servo_microbit',
     version: '1.0.0',
     type: 'microbit',
-    supportDevice: ['microbit'],
+    supportDevice: ['microbit','microbitv2'],
     author: 'iRobochakra',
     iconURL: `asset/servo.png`,
     description: formatMessage({
-        id: 'servo.description',
+        id: 'servo.description.microbit',
         default: 'Classic servo support for microbit.',
-        description: 'Description of servo'
+        description: 'Description of servo microbit'
     }),
     featured: true,
     blocks: 'blocks.js',
@@ -25,4 +25,4 @@ const servo = formatMessage => ({
     helpLink: ''
 });
 
-module.exports = servo;
+module.exports = servo_microbit;

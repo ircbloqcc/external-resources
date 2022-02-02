@@ -4,10 +4,10 @@
 function addBlocks (Blockly) {
     const color = '#FF6F00';
 
-    Blockly.Blocks.servo_write_microbit = {
+    Blockly.Blocks.servo_write_raspberrypico = {
         init: function () {
             this.jsonInit({
-                message0: Blockly.Msg.SERVO_WRITE_MICROBIT,
+                message0: Blockly.Msg.SERVO_WRITE_RASPBERRYPICO,
                 args0: [
                     {
                         type: 'field_dropdown',
@@ -29,13 +29,26 @@ function addBlocks (Blockly) {
                             ['13', '13'],
                             ['14', '14'],
                             ['15', '15'],
-                            ['16', '16']
+                            ['16', '16'],
+                            ['17', '17'],
+                            ['18', '18'],
+                            ['19', '19'],
+                            ['20', '20'],
+                            ['21', '21'],
+                            ['22', '22'],
+                            ['26_A0', '26'],
+                            ['27_A1', '27'],
+                            ['28_A2', '28'],
                         ]
                     },
                     {
                         type: 'input_value',
                         name: 'degree'
-                    }
+                    },
+					{
+						type: 'input_value',
+						name: 'freq'
+					}
                 ],
                 colour: color,
                 extensions: ['shape_statement']

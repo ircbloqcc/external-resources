@@ -3,15 +3,13 @@ module.exports = [
     'arduinoUno',
     'arduinoEsp8266',
     // Third party
-	'iBotV2_arduinoUno',
-	'Amingo_arduinoUno',
+    'iBotV2_arduinoUno',
+    'Amingo_arduinoUno',
     'arduinoNano_arduinoUno',
     'arduinoMini_arduinoUno',
     'arduinoLeonardo',
     'arduinoMega2560',
     'arduinoEsp32',
-	'maixduino',
-	'raspberrypico',
     'microbit',
     'microbitV2',
     'makeyMakey'

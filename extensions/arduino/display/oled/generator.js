@@ -9,10 +9,8 @@ function addGenerator (Blockly) {
         const addr = block.getFieldValue('ADDR');
 
         Blockly.Arduino.includes_.oled_init = `#include <Wire.h>\n#include <Adafruit_GFX.h>\n#include <Adafruit_SSD1306.h>`;
-        Blockly.Arduino.definitions_.oled_init = `#define OLED_RESET -1
-#define SCREEN_WIDTH ${x} // OLED display width, in pixels
-#define SCREEN_HEIGHT ${y} // OLED display height, in pixels`;
-		Blockly.Arduino.definitions_[`oled_init_${disp}`] = `Adafruit_SSD1306 ${disp}(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);`;
+        Blockly.Arduino.definitions_.oled_init = `#define OLED_RESET -1`;
+		Blockly.Arduino.definitions_[`oled_init_${disp}`] = `Adafruit_SSD1306 ${disp}(${x}, ${y}, &Wire, OLED_RESET);`;
 
         return `${disp}.begin(SSD1306_SWITCHCAPVCC, ${addr});\n`;
     };

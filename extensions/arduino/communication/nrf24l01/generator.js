@@ -24,7 +24,7 @@ function addGenerator (Blockly) {
         const data = Blockly.Arduino.valueToCode(block, 'DATA', Blockly.Arduino.ORDER_ATOMIC);
         const id = Blockly.Arduino.valueToCode(block, 'ID', Blockly.Arduino.ORDER_ATOMIC);
 
-        return `nrf24l01.sendString(${id}, ${data});\n`;
+        return `nrf24l01.sendString(${id}, ${data}, sizeof(${data}));\n`;
     };
 
     Blockly.Arduino.nrf24l01_sendValue = function (block) {

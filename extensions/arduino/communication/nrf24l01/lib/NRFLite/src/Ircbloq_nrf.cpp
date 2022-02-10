@@ -14,12 +14,12 @@ void Ircbloq_nrf::sendNumber(uint8_t id, float number)
     nrf24l01.send(id, &number, sizeof(float));
 }
 
-void Ircbloq_nrf::sendString(uint8_t id, String str)
+void Ircbloq_nrf::sendString(uint8_t id, String str, uint8_t strLen)
 {
-    char tx_buffer[str.length()];
+    char tx_buffer[strLen];
 
-    str.toCharArray(tx_buffer, str.length() + 1);
-    nrf24l01.send(id, &tx_buffer, str.length());
+    str.toCharArray(tx_buffer, strLen + 1);
+    nrf24l01.send(id, &tx_buffer, strLen);
 }
 
 void Ircbloq_nrf::sendValue(uint8_t id, String name, float value)

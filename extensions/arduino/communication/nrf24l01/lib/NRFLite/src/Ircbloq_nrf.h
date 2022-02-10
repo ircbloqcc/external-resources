@@ -11,7 +11,7 @@ public:
 
     void init(uint8_t id, uint8_t ce, uint8_t csn);
     void sendNumber(uint8_t id, float number);
-    void sendString(uint8_t id, String str);
+    void sendString(uint8_t id, String str, uint8_t strLen);
     void sendValue(uint8_t id, String name, float value);
     
     uint8_t hasData();

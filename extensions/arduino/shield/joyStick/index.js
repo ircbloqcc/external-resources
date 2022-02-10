@@ -21,7 +21,7 @@ const joyStick = formatMessage => ({
     toolbox: 'toolbox.js',
     msg: 'msg.js',
 	library: 'lib',
-    tags: ['other'],
+    tags: ['shield'],
     helpLink: 'https://hardwarefun.com/projects/joystick-shield'
 });
 
